@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+
+* {
+	font-family: "Indie Flower", cursive;
+	line-height: 2;
+	font-size: 2rem;
+}
+.v2 {
+    padding: 2rem 10rem;
+}
+.word-box {
+    position: relative;
+    display: inline-block;
+    height: 50px;
+    width: auto;
+}
+.correct,
+.wrong {
+    white-space: nowrap;
+    overflow: visible;
+}
+
+.correct {
+    white-space: nowrap;
+    overflow: visible;
+	position: absolute;
+	top: -65px;
+	left: 50%;
+	width: auto;
+	transform: translate(-50%);
+	font-weight: 900;
+	display: none;
+	color: red;
+}
+.wrong {
+     white-space: nowrap;
+    overflow: visible;
+	padding: 0 30px;
+}
+.correct.visible {
+	display: inline-block;
+}
+
+@keyframes strike {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 100%;
+	}
+}
+.strike {
+	position: relative;
+}
+.strike::after {
+	content: " ";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 4px;
+	background: black;
+	animation-name: strike;
+	animation-duration: 1s;
+	animation-timing-function: cubic-bezier(1, 0, 0, 1);
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
